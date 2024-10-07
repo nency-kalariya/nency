@@ -1,0 +1,103 @@
+installation step
+project creat step
+file-> new project-> name->
+edit-> add preference-> ios routes-> past CD in your project-> browse path of cd 7200-> next-> next-> select slot game e->next-> idle pc-> finish-> apply-> ok
+design router c7200 vada j levana 
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+OSPF------------
+R1#config t(badha router ma same)
+R1(config)#router ospf 1
+R1(config-router)#network 192.168.1.0 0.0.0.255 area 0
+R1(config-router)#network 192.168.2.0 0.0.0.255 area 0
+R1(config-router)#network 192.168.3.0 0.0.0.255 area 0
+R1(config-router)#network 192.168.4.0 0.0.0.255 area 0
+R1(config-router)#exit
+
+R2#config t
+# Configure OSPF
+R2(config)#router ospf 1
+R2(config-router)#network 192.168.1.0 0.0.0.255 area 0
+R2(config-router)#network 192.168.5.0 0.0.0.255 area 0
+R2(config-router)#exit
+
+R3(config)#router ospf 1
+R3(config-router)#network 192.168.4.0 0.0.0.255 area 0
+R3(config-router)#network 192.168.6.0 0.0.0.255 area 0
+R3(config-router)#exit
+
+R4(config)#router ospf 1
+R4(config-router)#network 192.168.2.0 0.0.0.255 area 0
+R4(config-router)#network 192.168.8.0 0.0.0.255 area 0
+R4(config-router)#exit
+
+R5(config)#router ospf 1
+R5(config-router)#network 192.168.3.0 0.0.0.255 area 0
+R5(config-router)#network 192.168.7.0 0.0.0.255 area 0
+R5(config-router)#exit
+
+
+PC5> ip 192.168.5.10 255.255.255.0 192.168.5.1
+
+PC6> ip 192.168.6.10 255.255.255.0 192.168.6.1
+
+PC4> ip 192.168.8.10 255.255.255.0 192.168.8.1
+
+PC7> ip 192.168.7.10 255.255.255.0 192.168.7.1
+
+-----testing----+
+PC5> ping 192.168.5.10
+
+PC6> ping 192.168.6.10
+----------------------------
+MY OSPF
+R1>config t
+R1>router ospf 1
+R1>network router 1 nu ip 0.0.0.255 area 0
+R1>network router 1 sathe jetla router connected hoi e badha na ip same as above 
+R1>exit
+
+BADHA ROUTER MA SAME JETLA ROUTER CONNECTED HOI E LAKHVANA
+
+PC1>ip (pc nu ip) 255.255.255.0 (j router connected hoi e ip)
+PC1> ping (pc 1 nu ip)
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+ MY RIP
+
+R1>config t
+R1>int f0/1(j avtu hoi e)
+R1>ip address router 1 nu ip 255.255.255.0
+R1>no shut
+R1>exit
+
+BADHA ROUTER MA SAME KRVANU
+
+PC1>pc 1 nu ip/24 ani sathe connected router nu ip 
+PC1>ping pc1 nu ip
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+EIGRP:- ( karavyu che pn aapdne aavdtu nathi and km karay e khbr nathi pn bija badha ma karta ospf ma e rite j chhe try Kari levi) 
+===================
+
+router eigrp 25
+
+network 10.9.1.0( Jem ospf ma lakhta Router ma e j jagya e aavu lakhvu aama b)
+
+network 10.9.2.0
+network 10.9.3.0
+network 10.9.4.0
+network 10.9.5.0
+network 10.9.6.0
+network 10.9.8.0
+
+R4(config)# do show ip route
+
+
+R4(config)#router eigrp 12 (badha router ma same)
+R4(config-router)#network 192.168.2.0 0.0.0.255 area 0
+R4(config-router)#network 192.168.8.0 0.0.0.255 area 0
+R4(config-router)#exit
+
+end
+
+show ip route
